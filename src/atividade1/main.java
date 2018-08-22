@@ -21,6 +21,7 @@ public class main {
                 System.out.println("");
                 acao = ler.nextInt();
                 BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
+                
                 if(acao==1){
                         while(vetor[i] == null){
                             if(vetor[i] == null){
@@ -29,7 +30,7 @@ public class main {
                                System.out.println("\n");
                             } else {
                                 i++;
-                            } 
+                            }
                         }
                 }else if(acao==2){
                     System.out.println("\n");
@@ -38,13 +39,22 @@ public class main {
                     }
                     System.out.println("\n");
                 }else if(acao==3){
-
+                    System.out.println("\nDigite o nome que você deseja procurar:\n");
+                    for(i=0; i<vetor.length; i++){
+                        
+                    }
                 }else if(acao==4){
-
+                    for(i=0; vetor[i]!=null; i++){
+                        System.out.println("Vetor " + i + "->" + vetor[i]);
+                    }
+                    int x = 0;
+                    System.out.println("\nQual vetor você deseja excluir? \nDigite apenas o número");
+                    x = ler.nextInt();
+                    vetor[x] = null;
                 }else if (acao==0){
-                    System.out.println("Obrigado por tudo. \nVolte sempre!");
+                    System.out.println("\nObrigado por tudo. \nVolte sempre! \n");
                 }else{
-                    System.out.println("Esta ação é invalida!\n");
+                    System.out.println("\nEsta ação é invalida! \nTente outro número\n");
                 }
             }
         }
