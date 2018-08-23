@@ -13,10 +13,10 @@ public class main {
     public static void main(String[] args) throws IOException {
         String[] vetor = new String[50];
         Scanner ler= new Scanner(System.in);
-        int acao;
+        int acao=9;
         
-        while(vetor[49] == null){
-            for(int i=0; i<vetor.length; i++){
+        while(acao != 0){
+            for(int i=0; acao!=0; i++){
                 System.out.println("O que deseja fazer agora? \n1-Adicionar um novo nome \n2-Apresentar os nomes \n3-Pesquisar um nome \n4-Remover um nome \n0-Sair");
                 System.out.println("");
                 acao = ler.nextInt();
@@ -28,20 +28,21 @@ public class main {
                                System.out.println("\nDigite o nome:");
                                vetor[i] = reader.readLine();
                                System.out.println("\n");
-                            } else {
+                            }else{
                                 i++;
                             }
                         }
                 }else if(acao==2){
                     System.out.println("\n");
-                    for(i=0; vetor[i]!= null; i++){
+                    for(i=0;vetor[i]!= null; i++){
                         System.out.println("->"+vetor[i]);
                     }
                     System.out.println("\n");
                 }else if(acao==3){
                     System.out.println("\nDigite o nome que você deseja procurar:\n");
                     String y; 
-                    y = reader.readLine();
+                    BufferedReader reader2 = new BufferedReader(new InputStreamReader(System.in));
+                    y = reader2.readLine();
                     for(i=0; i<vetor.length; i++){
                         if(vetor[i] == y){
                             System.out.println("Esse nome está no vetor " + i);
@@ -53,7 +54,8 @@ public class main {
                     }
                     int x = 0;
                     System.out.println("\nQual vetor você deseja excluir? \n*Digite apenas o número*");
-                    x = ler.nextInt();
+                    Scanner ler2= new Scanner(System.in);
+                    x = ler2.nextInt();
                     vetor[x] = null;
                     for(i=x; vetor[i]==null && vetor[i+1]!=null; i++){
                         vetor[i] = vetor[i+1];
@@ -62,6 +64,7 @@ public class main {
                     System.out.println("\n");
                 }else if (acao==0){
                     System.out.println("\nObrigado por tudo. \nVolte sempre! \n");
+                    acao=0;
                 }else{
                     System.out.println("\nEsta ação é invalida! \nTente outro número\n");
                 }
