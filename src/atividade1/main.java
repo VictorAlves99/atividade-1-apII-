@@ -16,13 +16,16 @@ public class main {
         int acao=9;
         
         while(acao != 0){
+            
             for(int i=0; acao!=0; i++){
                 System.out.println("O que deseja fazer agora? \n1-Adicionar um novo nome \n2-Apresentar os nomes \n3-Pesquisar um nome \n4-Remover um nome \n0-Sair");
                 System.out.println("");
                 acao = ler.nextInt();
                 BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
                 
+                
                 if(acao==1){
+                    
                         while(vetor[i] == null){
                             if(vetor[i] == null){
                                System.out.println("\nDigite o nome:");
@@ -32,6 +35,7 @@ public class main {
                                 i++;
                             }
                         }
+                    
                 }else if(acao==2){
                     System.out.println("\n");
                     for(i=0;vetor[i]!= null; i++){
@@ -61,6 +65,7 @@ public class main {
                         vetor[i] = vetor[i+1];
                         vetor[i+1] = null;
                     }
+                    i=0;
                     System.out.println("\n");
                 }else if (acao==0){
                     System.out.println("\nObrigado por tudo. \nVolte sempre! \n");
@@ -70,5 +75,22 @@ public class main {
                 }
             }
         }
-    }  
+    }
+    
+    
+    public static String [] inserirNome(String [] lista, String nome) {
+        
+        for(int i = 0; i < lista.length; i++) {
+            
+            if(lista[i] == null) {
+                lista[i] = nome;
+                break;
+            }
+            
+        }
+        
+        return lista;
+    }
+            
+
 }
