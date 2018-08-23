@@ -40,17 +40,26 @@ public class main {
                     System.out.println("\n");
                 }else if(acao==3){
                     System.out.println("\nDigite o nome que você deseja procurar:\n");
+                    String y; 
+                    y = reader.readLine();
                     for(i=0; i<vetor.length; i++){
-                        
+                        if(vetor[i] == y){
+                            System.out.println("Esse nome está no vetor " + i);
+                        }
                     }
                 }else if(acao==4){
                     for(i=0; vetor[i]!=null; i++){
                         System.out.println("Vetor " + i + "->" + vetor[i]);
                     }
                     int x = 0;
-                    System.out.println("\nQual vetor você deseja excluir? \nDigite apenas o número");
+                    System.out.println("\nQual vetor você deseja excluir? \n*Digite apenas o número*");
                     x = ler.nextInt();
                     vetor[x] = null;
+                    for(i=x; vetor[i]==null && vetor[i+1]!=null; i++){
+                        vetor[i] = vetor[i+1];
+                        vetor[i+1] = null;
+                    }
+                    System.out.println("\n");
                 }else if (acao==0){
                     System.out.println("\nObrigado por tudo. \nVolte sempre! \n");
                 }else{
